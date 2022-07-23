@@ -1,23 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
 import Features from './pages/Features';
 import Pricing from './pages/Pricing';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-import { BrowserRouter } from 'react-router-dom';
+import './styles/App.css'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <BrowserRouter>
-    <Navbar active={'home'}/>
+export default function App() {
+    return (
+     
+           <Router>
+                <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home/>}/ >
                     <Route path="/stories" element={<Stories/>}/>
@@ -26,7 +22,9 @@ root.render(
                     
                 </Routes>
                 <Footer/>
-  </BrowserRouter>
-);
-
+                </Router>
+      
+   
+    )
+}
 
